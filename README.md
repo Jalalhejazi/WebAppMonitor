@@ -120,7 +120,7 @@ Node that WebAppMonitor works great behind a proxy - it uses the `http_proxy` en
 
 Architecture & API
 -------------------
-<img src="images/API.png" alt="">
+<img src="images/api.png" alt="">
 
 
 WebAppMonitor is composed of two services: a webapp (in `app.js`), and a polling monitor (in `monitor.js)`. For your convenience, the two services start together when you call `node app`.
