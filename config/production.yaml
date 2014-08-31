@@ -1,0 +1,69 @@
+url: 'http://localhost:8082'
+
+mongodb:
+  server:   localhost
+  database: uptime
+  user:
+  password:
+  connectionString:      mongodb://localhost:27017/uptime
+
+monitor:
+  name:                   origin
+  apiUrl:                 'http://localhost:8082/api' # must be accessible without a proxy
+  pollingInterval:        10000      # ten seconds
+  timeout:                5000       # five seconds
+  userAgent:              NodeUptime/3.0 (https://github.com/fzaninotto/uptime)
+
+analyzer:
+  updateInterval:         60000      # one minute
+  qosAggregationInterval: 600000     # ten minutes
+  pingHistory:            8035200000 # three months
+
+autoStartMonitor: true
+
+plugins:
+  #- ./plugins/console
+  - ./plugins/patternMatcher
+  - ./plugins/httpOptions
+  - ./plugins/webhooks
+  - ./plugins/email
+  - ./plugins/basicAuth
+
+webhooks:
+    event:
+      up:
+        - 'http://localhost:8082'
+        - 'http://rest.supermobile.dk/opgaver/post/service.superusers.dk__UP'
+      down:
+        - 'http://rest.supermobile.dk/opgaver/post/service.superusers.dk__DOWN'
+      paused:
+        - 'http://rest.supermobile.dk/opgaver/post/service.superusers.dk__PAUSED'
+      restarted:
+        - 'http://rest.supermobile.dk/opgaver/post/service.superusers.dk__RESTARTED'
+    dashboardUrl: 'http://localhost:8082'
+
+email:
+  method:      SMTP  # possible methods are SMTP, SES, or Sendmail
+  transport:         # see https://github.com/andris9/nodemailer for transport options
+    service:   Gmail # see https://github.com/andris9/Nodemailer/blob/master/lib/wellknown.js for well-known services
+    auth:
+      user:          'jalal.hejazi@gmail.com'
+      pass:          ''
+  event:
+    up:        true
+    down:      true
+    paused:    false
+    restarted: false
+  message:
+    from:      'WebApp Monitor <NoReply@WebAppMonitor.js>'
+    to:        'jalal.hejazi@gmail.com'
+
+basicAuth:
+  username:    jalal
+  password:
+verbose: true # only used in dev
+
+webPageTest:
+  server: 'http://www.webpagetest.org'
+  key:
+  testOptions:
