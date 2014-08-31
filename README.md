@@ -208,7 +208,7 @@ exports.initWebapp = function() {
   });
 }
 ```
-All WebAppMonitor entities emit lifecycle events that you can listen to on the Model class. These events are `beforeInsert`, `afterInsert`, `beforeUpdate`, `afterUpdate`, `beforeSave` (called for both inserts and updates), `afterSave` (called for both inserts and updates), `beforeRemove`, and `afterRemove`. For more information about these events, check the [mongoose-lifecycle](https://github.com/JalalHejazi/mongoose-lifecycle) plugin.
+All WebAppMonitor entities emit lifecycle events that you can listen to on the Model class. These events are `beforeInsert`, `afterInsert`, `beforeUpdate`, `afterUpdate`, `beforeSave` (called for both inserts and updates), `afterSave` (called for both inserts and updates), `beforeRemove`, and `afterRemove`. For more information about these events, check the [mongoose-lifecycle](https://github.com/fzaninotto/mongoose-lifecycle) plugin.
 
 API
 ---------------
