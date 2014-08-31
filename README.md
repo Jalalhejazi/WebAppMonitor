@@ -171,14 +171,18 @@ You can override these settings in your environment configuration, for instance:
 
 ```yaml
 # in config/production.yaml
-# disable the console plugin and enable the email plugin
+# disable the console plugin and enable the email plugin, basicAuth & webhooks
 plugins:
-  # - ./plugins/console
+    #- ./plugins/console
   - ./plugins/patternMatcher
   - ./plugins/httpOptions
+  - ./plugins/webhooks
   - ./plugins/email
-  # - ./plugins/basicAuth
+  - ./plugins/basicAuth
 ```
+
+
+<img src="images/production.png" alt="">
 
 
 Writing Plugins
