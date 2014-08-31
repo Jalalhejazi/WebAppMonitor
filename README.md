@@ -1,10 +1,7 @@
 WebAppMonitor (Nodejs)
-======
+=======================
 
 A remote monitoring WebApp using Nodejs, MongoDB, and Twitter Bootstrap.
-
-
-
 
 <img src="images/ResponseTime.png" alt="">
 
