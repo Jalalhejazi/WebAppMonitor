@@ -35,6 +35,11 @@
  *   telegram:
  *     app_key: # Telegram bot api key
  *     chat_id: # target chat id
+ *     event:
+ *      up:        true
+ *      down:      true
+ *      paused:    false
+ *      restarted: false
  */
 var fs         = require('fs');
 var moment     = require('moment');
