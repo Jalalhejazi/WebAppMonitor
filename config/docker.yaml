@@ -1,0 +1,2 @@
+mongodb:
+  connectionString:      mongodb://db:27017/uptime

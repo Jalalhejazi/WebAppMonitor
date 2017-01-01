@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  app:
+    build:
+      context: ./
+    environment:
+      NODE_ENV: docker
+    ports:
+      - 8082:8082
+    depends_on:
+      - db
+
+  db:
+    image: mongo
+    volumes:
+      - db_data:/data/db
+
+volumes:
+  db_data:
+    driver: local

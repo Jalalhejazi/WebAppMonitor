@@ -59,6 +59,12 @@ Lastly, start the application with:
 $ nodemon
 ```
 
+Start application with [Docker](http://docker.com):
+
+```sh
+$ docker-compose up
+```
+
 <img src="images/node_app_start.png" alt="">
 
 
