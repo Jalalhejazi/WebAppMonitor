@@ -13,7 +13,9 @@ services:
 
   db:
     image: mongo
+    volumes:
+      - db_data:/data/db
 
 volumes:
-  db:
+  db_data:
     driver: local
